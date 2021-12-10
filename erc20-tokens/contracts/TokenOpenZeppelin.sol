@@ -23,13 +23,14 @@ contract TokenOpenZeppelin3 is ERC20{
   }
 
   function mint(address to, uint amount) external {
+    // protects mint function
     require(msg.sender == admin, 'only admin');
     _mint(to, amount);
   }
 
 }
 
-// Creating a faucet
+// Creating a faucet perfect for development to send yourself token
 contract TokenOpenZeppelin3 is ERC20{
   constructor() ERC20('Token Name', 'Token_Ticker'){}
 
